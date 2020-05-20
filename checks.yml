@@ -226,7 +226,7 @@ badpackets:
   # Buffer Size (ticks)
   # The larger the value, the slower the detection, but the more stable
   # Don't set it lower than 10
-  buffer_size: 20
+  buffer_size: 60
 
   # Freeze time (millisecond, 1second=1000 millisecond)
   # The time to freeze player if they try to send too
@@ -255,7 +255,7 @@ fastuse:
   enable: true
 
   # Violations needed to cancel illegal item use (-1 = never cancel)
-  cancel_vl: 5
+  cancel_vl: 20
 
   # Violation weight
   vl_weight: 1
@@ -263,8 +263,8 @@ fastuse:
   # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
-    5: 'matrix notify %player% tried to use an item faster than usual (FastUse)'
-    12: 'matrix kick %player% FastUse Hacks'
+    20: 'matrix notify %player% tried to use an item faster than usual (FastUse)'
+    50: 'matrix kick %player% FastUse Hacks'
 
 ## FastBow
 # Check prevents player from shooting a bow too quickly.
@@ -296,8 +296,8 @@ fastheal:
   # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
-    10: 'matrix notify %player% tried to regain health too quickly (FastHeal)'
-    20: 'matrix kick %player% FastHeal Hacks'
+    30: 'matrix notify %player% tried to regain health too quickly (FastHeal)'
+    60: 'matrix kick %player% FastHeal Hacks'
 
 ## Block
 # Check prevents the player from breaking, placing block quickly
@@ -306,7 +306,7 @@ block:
   enable: true
 
   # Violations needed to cancel illegal breaking/placing of blocks (-1 = never cancel)
-  cancel_vl: 5
+  cancel_vl: 20
 
   # Modules List
   # You can turn off some modules here
@@ -314,12 +314,12 @@ block:
     # It can detect player breaking block faster
     fastbreak:
       enable: true
-      vl_weight: 4
+      vl_weight: 2
     # It can detect player placing block faster
     fastplace:
       enable: true
       vl_weight: 1
-      max_place_per_second: 9
+      max_place_per_second: 20
     # It can detect player placing block without swing hand
     noswing:
       enable: true
@@ -332,8 +332,8 @@ block:
   # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
-    10: 'matrix notify %player% tried to place/break a block too quickly (FastPlace/FastBreak)'
-    20: 'matrix kick %player% FastPlace/FastBreak Hacks'
+    40: 'matrix notify %player% tried to place/break a block too quickly (FastPlace/FastBreak)'
+    80: 'matrix kick %player% FastPlace/FastBreak Hacks'
 
 ## Scaffold check
 # Check prevents player bridging blocks or towering up faster than normal speed
@@ -375,13 +375,13 @@ jesus:
   enable: true
 
   # Violations needed to cancel illegal movements (-1 = never cancel)
-  cancel_vl: 15
+  cancel_vl: 30
 
   # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
-    15: 'matrix notify %player% tried to move illegally in liquid (Jesus)'
-    25: 'matrix kick %player% Jesus/WaterSpeed/WaterFly Hacks'
+    30: 'matrix notify %player% tried to move illegally in liquid (Jesus)'
+    50: 'matrix kick %player% Jesus/WaterSpeed/WaterFly Hacks'
 
 ## Inventory
 # Check prevents the player from using illegal inventory modifications such as Steal.
@@ -405,7 +405,7 @@ inventory:
   # Disable InventoryMove check
   # If you don't need InventoryMove check, you can set this to 'true' to disable it
   # This option ONLY works for 1.12/1.13/+ server
-  disable_invmove: false
+  disable_invmove: true
 
   # Check AutoTotem cheat?
   auto_totem: true
@@ -425,7 +425,7 @@ velocity:
   # The time to wait for players to respond to velocity (ticks)
   # If the player does not respond to velocity after that
   # time, the player will be detected.
-  wait_time: 20
+  wait_time: 60
 
   # Ignore lag player, this feature can ignore the player who
   # is lagging or changing resource pack.
@@ -446,15 +446,15 @@ velocity:
   # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
-    10: 'matrix notify %player% tried to ignore server velocity (Velocity)'
-    15: 'matrix notify %player% tried to ignore server velocity (Velocity) #2'
-    20: 'matrix kick %player% Velocity/Anti-Knockback'
+    20: 'matrix notify %player% tried to ignore server velocity (Velocity)'
+    30: 'matrix notify %player% tried to ignore server velocity (Velocity) #2'
+    40: 'matrix kick %player% Velocity/Anti-Knockback'
 
 ## Spam
 # Check prevents a player from spamming messages in the servers chat.
 chat:
   # Enable this check?
-  enable: true
+  enable: false
 
   # Minimum amount of time between messages (Seconds)
   min_time: 3
@@ -521,13 +521,13 @@ phase:
   freeze_time: 500
 
   # Violations needed to cancel illegal movements
-  cancel_vl: 5
+  cancel_vl: 10
 
   # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
-    7: 'matrix notify %player% is phase into block (Phase)'
-    13: 'matrix notify %player% is phase into block (Phase) #2'
+    15: 'matrix notify %player% is phase into block (Phase)'
+    30: 'matrix notify %player% is phase into block (Phase) #2'
 
 ## AutoBot
 # Check prevents player use some Bot mods like Baritone

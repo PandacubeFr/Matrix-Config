@@ -30,19 +30,19 @@ player_latency_protection:
 # files from a central address.
 cloud_config:
   # Enable this feature? (default: false)
-  enable: false
+  enable: true
 
   # you can add multiple links here, it can avoid losing configuration files due to a link going offline
   # If all links going offline, Matrix will use the default configuration
   links:
-    - 'your configuration file link'
+    - 'https://www.pandacube.fr/assets/files/checks.yml'
 
 # Permission Cache refresh interval (unit: seconds, default: 15)
 permission_refresh_interval: 15
 
 # Kick Lighting Effect
 # Should there be a lightning bolt visual effect if someone is getting kicked using /matrix kick
-kick_strike_lightning: true
+kick_strike_lightning: false
 
 # Ghost Mode
 # If you enable Ghost Mode, Matrix will Not setback player or cancel illegal actions.
@@ -106,4 +106,4 @@ custom_vl_weight:
   - 'example_component:5'
 
 # Hide prefix in the kick messages (default: false)
-hide_prefix_in_kick: false
+hide_prefix_in_kick: true

@@ -24,7 +24,7 @@ prefix: '&7[&bMatrix&7]&r '
 kick-format: 'player %player% was kicked because of cheating!'
 
 ## Broadcast a message when a player is kicked?
-kick-broadcast: true
+kick-broadcast: false
 
 ## Spam Warning Message Format
 # Description: This is the message sent to a player who has triggered the ChatSpam check.
